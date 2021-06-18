@@ -76,18 +76,6 @@ namespace OpenCascade.ImageViewer
             return node;
         }
 
-        
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-
-        }
-
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             var currentNode = e.Node as ValueTreeNode<FileSystemEntityModel>;
@@ -101,25 +89,26 @@ namespace OpenCascade.ImageViewer
             showPicture(PictureModel);
         }
 
-        public void Update(IFileSystemModel paramModel)
-        {
-            
-        }
-
         public void showTreeFolder(IFileSystemModel model)
         {
             BuildTreeUI(model.RootNode);
         }
 
-        public void Update(IPictureModel paramModel)
-        {
-
-        }
 
         public void showPicture(IPictureModel model)
         {
             pictureBox1.Image = model.Image;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        public void Update(IFileSystemModel model)
+        {
+            FSModel = model;
+        }
+
+        public void Update(IPictureModel model)
+        {
+            PictureModel = model;
         }
     }
 }
