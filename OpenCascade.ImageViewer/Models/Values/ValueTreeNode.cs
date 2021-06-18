@@ -1,12 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using OpenCascade.ImageViewer.Models.Abstract;
+using System.Windows.Forms;
 
-namespace OpenCascade.ImageViewer.Models
+namespace OpenCascade.ImageViewer.Models.Values
 {
-    public interface ITreeNodeValue
-    {
-        public string NodeName { get; }
-    }
-
     public class ValueTreeNode<TValue> : TreeNode where TValue : ITreeNodeValue
     {
         public ValueTreeNode(TValue entry) : base(entry.NodeName)

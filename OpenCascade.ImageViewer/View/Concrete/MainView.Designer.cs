@@ -1,7 +1,7 @@
 ﻿
 namespace OpenCascade.ImageViewer
 {
-    partial class Form1
+    partial class MainView
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace OpenCascade.ImageViewer
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +77,7 @@ namespace OpenCascade.ImageViewer
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
             this.fileToolStripMenuItem.Text = "Открыть";
-           
+
             // 
             // menuStrip1
             // 

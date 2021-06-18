@@ -1,7 +1,7 @@
-﻿using OpenCascade.ImageViewer.Models;
+﻿using OpenCascade.ImageViewer.Models.Abstract;
 using System.Collections.Generic;
 
-namespace OpenCascade.ImageViewer
+namespace OpenCascade.ImageViewer.Models.Values
 {
     public enum EntryType
     {
@@ -9,7 +9,7 @@ namespace OpenCascade.ImageViewer
         Directory
     }
 
-    public class FileSystemEntry : ITreeNodeValue
+    public class FileSystemEntityModel : ITreeNodeValue
     {
         public EntryType Type { get; set; }
         public string Name { get; set; }
@@ -21,7 +21,7 @@ namespace OpenCascade.ImageViewer
         public string NodeName => Name;
     }
 
-    class FileSystemEntryNode : FileSystemEntry
+    public class FileSystemEntryNode : FileSystemEntityModel
     {
         public IReadOnlyCollection<FileSystemEntryNode> Childs { get; set; }
     }
