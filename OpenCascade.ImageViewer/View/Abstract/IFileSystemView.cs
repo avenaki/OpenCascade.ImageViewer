@@ -2,9 +2,8 @@
 
 namespace OpenCascade.ImageViewer.View.Abstract
 {
-    public interface IFileSystemView
+    public interface IFileSystemView: IView<IFileSystemModel>
     {
-        void Update(IFileSystemModel paramModel);
         void showTreeFolder(IFileSystemModel model);
     }
 

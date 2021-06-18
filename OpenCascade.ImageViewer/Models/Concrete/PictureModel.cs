@@ -7,12 +7,12 @@ namespace OpenCascade.ImageViewer.Models.Concrete
 {
     public class PictureModel: IPictureModel
     {
-        private ArrayList aList = new ArrayList();
+        private ArrayList _observersList = new ArrayList();
         public Image Image { get; set; }
 
         public void AddObserver(IPictureView paramView)
         {
-            foreach (IPictureView view in aList)
+            foreach (IPictureView view in _observersList)
             {
                 view.Update(this);
             }
@@ -25,7 +25,7 @@ namespace OpenCascade.ImageViewer.Models.Concrete
 
         public void NotifyObservers()
         {
-            foreach (IPictureView view in aList)
+            foreach (IPictureView view in _observersList)
             {
                 view.Update(this);
             }
@@ -33,7 +33,7 @@ namespace OpenCascade.ImageViewer.Models.Concrete
 
         public void RemoveObserver(IPictureView paramView)
         {
-             aList.Remove(paramView);
+             _observersList.Remove(paramView);
         }
     }
 }

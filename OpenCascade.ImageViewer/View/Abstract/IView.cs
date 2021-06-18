@@ -2,10 +2,8 @@
 
 namespace OpenCascade.ImageViewer.View.Abstract
 {
-    public interface IPictureView: IView<IPictureModel>
+    public interface IView<TModel> 
     {
-        void showPicture(IPictureModel model);
-
+        void Update(TModel model);
     }
-
 }

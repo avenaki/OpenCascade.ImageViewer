@@ -10,12 +10,12 @@ namespace OpenCascade.ImageViewer.Models.Concrete
 {
     public class FileSystemModel : IFileSystemModel
     {
-        private ArrayList aList = new ArrayList();
+        private ArrayList _observersList = new ArrayList();
         public FileSystemEntryNode RootNode { get; set; }
 
         public void AddObserver(IFileSystemView paramView)
         {
-            aList.Add(paramView);
+            _observersList.Add(paramView);
         }
 
         public void BuildTree(string path)
@@ -53,7 +53,7 @@ namespace OpenCascade.ImageViewer.Models.Concrete
 
         public void NotifyObservers()
         {
-            foreach (IFileSystemView view in aList)
+            foreach (IFileSystemView view in _observersList)
             {
                 view.Update(this);
             }
@@ -61,7 +61,7 @@ namespace OpenCascade.ImageViewer.Models.Concrete
 
         public void RemoveObserver(IFileSystemView paramView)
         {
-            aList.Remove(paramView);
+            _observersList.Remove(paramView);
         }
     }
 }
